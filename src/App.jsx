@@ -1,7 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 import axios from 'axios'
-import { DataGrid } from '@mui/x-data-grid';
+import { AgGridReact } from 'ag-grid-react'
+import 'ag-grid-community/styles/ag-grid.css'
+import 'ag-grid-community/styles/ag-theme-alpine.css'
 
 
 function App () { //importar componente
@@ -9,21 +11,30 @@ function App () { //importar componente
   const [usuarios, setUsuarios] = useState([]);
   const [searchTitle, setSearchTitle] = useState("");
   const [searchType, setSearchType] = useState("");
-  const [result, setResult] = useState("");
+  const [columnDefs, setColumnDefs] = useState([
+    {field: 'codigo'},
+    {field: 'nomeCompleto'},
+    {field: 'nomeSocial'},
+    {field: 'dataDeNascimento'},
+    {field: 'sexo'},
+    {field: 'numeroDeAcessos'},
+    {field: 'estado'},
+    {field: 'municipio'},
+    {field: 'dataDeVinculo'},
+    {field: 'email'},
+    {field: 'situacao'}
+]);
 
 
   useEffect(() => {
     const loadUsers = async () => {
       setLoading(true);
-      const response = await axios.get(
-        "https://dev.labtime.ufg.br/selecao-2023/usuarios"
-      );
+      const response = await axios.get("https://dev.labtime.ufg.br/selecao-2023/usuarios");
       setUsuarios(response.data);
       setLoading(false);
     };
-
-    loadUsers();
-  }, []);
+    loadUsers()
+    }, []);
 
 
   const resultado = (usuarios.filter((value) => {
@@ -31,14 +42,24 @@ function App () { //importar componente
             return value;
           }
 
-          else if (
-            value[searchType].toLowerCase().includes(searchTitle.toLowerCase())
-          )
-          {
+          else if (value[searchType].toLowerCase().includes(searchTitle.toLowerCase())) {
             return value;
           }
           console.log(value[searchType])
-        }))
+  }))
+
+  //teste ag grid
+  const defaultColDef = useMemo(() => ({
+    sortable: true, //ordenar
+    filter: true 
+  }), []);
+  
+  
+  const pushMeClicked = useCallback(e => gridRef.current.api.deselectAll(), []);
+
+
+
+
 
   return (
     <div className="w-3 container">
@@ -55,52 +76,29 @@ function App () { //importar componente
 
         <select name ='filtro' id="filtro" onChange={(e) => setSearchType(e.target.value)}>
             
+              <option>Filtrar</option>
               <option value="nomeCompleto">Nome Completo</option>
               <option value="nomeSocial">Nome Social</option>
               <option value="email">Email</option>
 
           
         </select>
-        {console.log(searchType)}
+        {console.log(searchType)} 
       </form>
 
-      <p id='line'></p>
-      <tr className="categorias">
-        <tr>
-          <th>Código</th>
-          <th>Nome</th>
-          <th>Nome Social</th>
-          <th>Nascimento</th>
-          <th>Sexo</th>
-          <th>Acessos</th>
-          <th>Estado</th>
-          <th>Município</th>
-          <th>Vínculo</th>
-          <th>Email</th>
-          <th>Situação</th>
-          </tr>
 
-      
-      
-      {loading ? (
-      <h4>Loading page ...</h4>
-    ) : (
-        resultado.map((item) => 
-          <tr key={item.codigo}>
-          <th>{item.codigo}</th>
-          <th>{item.nomeCompleto}</th>
-          <th>{item.nomeSocial}</th>
-          <th>{item.dataDeNascimento}</th>
-          <th>{item.sexo}</th>
-          <th>{item.numeroDeAcessos}</th>
-          <th>{item.estado}</th>
-          <th>{item.municipio}</th>
-          <th>{item.dataDeVinculo}</th>
-          <th>{item.email}</th>
-          <th>{item.situacao}</th>
-          </tr>)
-    )}
-     </tr>
+     <div className='ag-theme-alpine' style={{height: 500, width: 1280, marginTop: 200}}>
+            <button onClick={pushMeClicked}>Push Me</button>
+            <AgGridReact
+                //ref={gridRef}
+                columnDefs={columnDefs}
+                rowData={resultado}
+                defaultColDef={defaultColDef}
+                animateRows={true}
+                rowSelection='multiple'
+            />
+        </div>
+
     </div>    
   )
 }

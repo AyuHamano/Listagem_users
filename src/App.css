@@ -1,4 +1,4 @@
-@import url('https://cdn.syncfusion.com/ej2/material.css');
+
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +24,7 @@ body {
   font-size: 0.9rem;
   align-items: center;
   width: 74vh;
-  height: 4vh;
+  height: 5vh;
   font-weight: bold;
   outline: none;
   transition: background-color 0.1s ease-in;
@@ -34,11 +34,11 @@ body {
   right: 33.12%;
   bottom: 71.88%;
   margin-top: 8vh;
-  background-color:rgb(238, 226, 226);
+  background-color:#F7F7F7;;
 }
 
 .container form input:focus {
-  background-color: rgb(224, 235, 224);
+  background-color: rgb(231, 238, 231);
 
 }
 .navigation {
@@ -66,36 +66,32 @@ body {
   left: 0px;
   top: 13vh;
   background: #6CD863;
- 
+  display: flex;
+  align-items: center;
+}
+
+#filtro {
+  height: 5vh;
+  border-radius: 2.34375vh;
+  margin: 0 0 -5% 18%;
+  border: none;
+  padding: 1vh;
+  background-color: #F7F7F7;
+  color: rgb(56, 53, 53);
 }
 
 #titulo {
   position: absolute;
   width: 76.56vh;
   height: 7.8125vh;
-  margin-top: 3.125vh;
   font-style: normal;
   font-weight: 62.5vh;
   font-size: 4.6875vh;
   line-height: 7.8125vh;
   text-align: center;
-  left: 29.12%;
-  right: 33.12%;
+  margin: 0 33% 2% 29%;
   color: #FFFFFF;
   mix-blend-mode: normal;
-}
-.categorias {
-  position: absolute;
-  width: 190.5vh; 
-  height: 6.25vh;
-  font-size: 2.3vh;
-  left: 11vh;
-  margin-top: 35.68vh;
-  
-}
-.dados {
-  margin-top: 3.125vh;
-  
 }
 
 @media (max-width: 440px) {
@@ -122,6 +118,5 @@ body {
   .categorias {
     font-size: 1vh;
   }
-
 
 }
