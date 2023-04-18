@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import axios from 'axios'
+import { DataGrid } from '@mui/x-data-grid';
+
 
 function App () { //importar componente
   const [loading, setLoading] = useState(false);
