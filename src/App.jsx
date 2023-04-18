@@ -50,10 +50,6 @@ function App () { //importar componente
         <input type="search" placeholder='Pesquisar' id='search-board' onChange={(e) => setSearchTitle(e.target.value)}/>
 
         <select name ='filtro' value = {searchType} id="filtro" onChange={(e) => setSearchType(e.target.value)}>
-          {usuarios.map(item => (
-
-            
-          ))}
           <option value="Nome Completo">Nome Completo</option>
           <option value="Nome Social">Nome Social</option>
           <option value="Email">Email</option>
