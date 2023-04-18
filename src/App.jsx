@@ -7,6 +7,7 @@ function App () { //importar componente
   const [usuarios, setUsuarios] = useState([]);
   const [searchTitle, setSearchTitle] = useState("");
   const [searchType, setSearchType] = useState("");
+  const [result, setResult] = useState("");
 
 
   useEffect(() => {
@@ -23,18 +24,19 @@ function App () { //importar componente
   }, []);
 
 
-  const resultado_busca = (usuarios.filter((value) => {
-          if (searchTitle === "") {
+  const resultado = (usuarios.filter((value) => {
+          if (searchTitle === "" || searchType === "") {
             return value;
-          } else if (
-            Object.values(value).some(value => value.toString().toLowerCase().includes(searchTitle.toLowerCase())
-          )) 
+          }
+
+          else if (
+            value[searchType].toLowerCase().includes(searchTitle.toLowerCase())
+          )
           {
             return value;
           }
+          console.log(value[searchType])
         }))
-  
-
 
   return (
     <div className="w-3 container">
@@ -49,12 +51,15 @@ function App () { //importar componente
         <label id='titulo' htmlFor="search">Cadastros de usuários</label>
         <input type="search" placeholder='Pesquisar' id='search-board' onChange={(e) => setSearchTitle(e.target.value)}/>
 
-        <select name ='filtro' value = {searchType} id="filtro" onChange={(e) => setSearchType(e.target.value)}>
-          <option value="Nome Completo">Nome Completo</option>
-          <option value="Nome Social">Nome Social</option>
-          <option value="Email">Email</option>
-        </select>
+        <select name ='filtro' id="filtro" onChange={(e) => setSearchType(e.target.value)}>
+            
+              <option value="nomeCompleto">Nome Completo</option>
+              <option value="nomeSocial">Nome Social</option>
+              <option value="email">Email</option>
 
+          
+        </select>
+        {console.log(searchType)}
       </form>
 
       <p id='line'></p>
@@ -78,7 +83,7 @@ function App () { //importar componente
       {loading ? (
       <h4>Loading page ...</h4>
     ) : (
-        resultado_busca.map((item) => 
+        resultado.map((item) => 
           <tr key={item.codigo}>
           <th>{item.codigo}</th>
           <th>{item.nomeCompleto}</th>
@@ -91,7 +96,6 @@ function App () { //importar componente
           <th>{item.dataDeVinculo}</th>
           <th>{item.email}</th>
           <th>{item.situacao}</th>
-
           </tr>)
     )}
      </tr>
