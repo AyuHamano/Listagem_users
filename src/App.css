@@ -7,8 +7,8 @@
 body {
   color: #118007bf;
   background-color:#F6F6F6;
-  width: 100vh;
-  min-height: 100vh;
+  width: 100%;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   font-family: sans-serif;
@@ -22,7 +22,7 @@ body {
   border-radius: 2.34375vh;
   font-size: 0.9rem;
   align-items: center;
-  width: 75vh;
+  width: 74vh;
   height: 4vh;
   font-weight: bold;
   outline: none;
@@ -60,7 +60,7 @@ body {
 
 .busca {
   position: absolute;
-  width: 218.7vh;
+  width: 207.7vh;
   height: 19vh;
   left: 0px;
   top: 13vh;
@@ -85,10 +85,10 @@ body {
 }
 .categorias {
   position: absolute;
-  width: 200.5vh; 
+  width: 190.5vh; 
   height: 6.25vh;
   font-size: 2.3vh;
-  left: 13vh;
+  left: 11vh;
   margin-top: 35.68vh;
   
 }
