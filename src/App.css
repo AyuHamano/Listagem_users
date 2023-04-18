@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #118007bf;
+  background-color:#F6F6F6;
+  width: 100vh;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  
+}
+
+.container form input {
+  color: inherit;
+  padding: 0.2em;
+  border: none;
+  border-radius: 2.34375vh;
+  font-size: 0.9rem;
+  align-items: center;
+  width: 75vh;
+  height: 4vh;
+  font-weight: bold;
+  outline: none;
+  transition: background-color 0.1s ease-in;
+  position: absolute;
+  top: 22.95%;
+  left: 30.12%;
+  right: 33.12%;
+  bottom: 71.88%;
+  margin-top: 8vh;
+  background-color:rgb(238, 226, 226);
+}
+
+.container form input:focus {
+  background-color: rgb(224, 235, 224);
+
+}
+.navigation {
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  height: 13vh;
+  bottom: 88.28%;
+  background: #F7F7F7;
+  box-shadow: 0px 2px 2px rgba(20, 18, 18, 0.25);
+}
+
+#logo {
+  position: absolute;
+  width: 26vh;
+  height: 12vh;
+  left: 11vh;
+}
+
+.busca {
+  position: absolute;
+  width: 218.7vh;
+  height: 19vh;
+  left: 0px;
+  top: 13vh;
+  background: #6CD863;
+ 
+}
+
+#titulo {
+  position: absolute;
+  width: 76.56vh;
+  height: 7.8125vh;
+  margin-top: 3.125vh;
+  font-style: normal;
+  font-weight: 62.5vh;
+  font-size: 4.6875vh;
+  line-height: 7.8125vh;
+  text-align: center;
+  left: 29.12%;
+  right: 33.12%;
+  color: #FFFFFF;
+  mix-blend-mode: normal;
+}
+.categorias {
+  position: absolute;
+  width: 200.5vh; 
+  height: 6.25vh;
+  font-size: 2.3vh;
+  left: 13vh;
+  margin-top: 35.68vh;
+  
+}
+.dados {
+  margin-top: 3.125vh;
+  
+}
+
+@media (max-width: 440px) {
+  .busca {
+    position: absolute;
+    width: 414px;
+    height: 133px;
+    left: 0px;
+    top: 95px;
+  }
+  #logo {
+    top: 20px;
+    left: 10px;
+    width: 150px;
+    height: 75px;
+  }
+  #titulo {
+    width: 338px;
+    height: 37px;
+    left: 35px;
+    font-weight: 200;
+    font-size: 28.8544px;
+  }
+  .categorias {
+    font-size: 1vh;
+  }
+
+
+}
