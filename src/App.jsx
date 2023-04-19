@@ -4,6 +4,8 @@ import axios from 'axios'
 import { AgGridReact } from 'ag-grid-react'
 import 'ag-grid-community/styles/ag-grid.css'
 import 'ag-grid-community/styles/ag-theme-alpine.css'
+//import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
+
 
 
 function App () { 
@@ -12,17 +14,17 @@ function App () {
   const [searchTitle, setSearchTitle] = useState(""); //recebe os valores digitados
   const [searchType, setSearchType] = useState(""); //recebe o valor selecionado na no select
   const [columnDefs, setColumnDefs] = useState([
-    {field: 'codigo'},
-    {field: 'nomeCompleto'},
-    {field: 'nomeSocial'},
-    {field: 'dataDeNascimento'},
-    {field: 'sexo'},
-    {field: 'numeroDeAcessos'},
-    {field: 'estado'},
-    {field: 'municipio'},
-    {field: 'dataDeVinculo'},
-    {field: 'email'},
-    {field: 'situacao'}
+    {field: 'codigo', headerName: 'id', width: 66},
+    {field: 'nomeCompleto', headerName: 'Nome Completo', width: 200, resizable: true},
+    {field: 'nomeSocial', width: 130},
+    {field: 'dataDeNascimento', headerName: 'Nascimento', width: 150},
+    {field: 'sexo', width: 82},
+    {field: 'numeroDeAcessos', headerName: 'Acessos', width: 100},
+    {field: 'estado', width: 130},
+    {field: 'municipio', headerName: 'Cidade', width: 140},
+    {field: 'dataDeVinculo', headerName: 'Vínculo', width: 120},
+    {field: 'email', width: 150, resizable: true},
+    {field: 'situacao', headerName: 'Status', width: 110}
 ]); //recebe o nome das colunas da tabela no ag grid
 
 
@@ -56,22 +58,9 @@ function App () {
     filter: true 
   }), []);
   
-  
-  const pushMeClicked = useCallback(e => gridRef.current.api.deselectAll(), []);
-
-
-
-
 
   return (
     <div className="w-3 container">
-
-      <nav className='navigation'>
-        <a href="https://www.labtime.ufg.br/site">
-          <img id='logo' src="img/marca_labtime.png" alt="logo"/>
-        </a>
-      </nav>
-
       <form className='busca'>
         <label id='titulo' htmlFor="search">Cadastros de usuários</label>
         <input type="search" placeholder='Pesquisar' id='search-board' onChange={(e) => setSearchTitle(e.target.value)}/>
@@ -89,15 +78,17 @@ function App () {
       </form>
 
 
-     <div className='ag-theme-alpine' style={{height: 500, width: 1280, marginTop: 200}}>
-            <button onClick={pushMeClicked}>Push Me</button>
+     <div id="myGrid" className='ag-theme-alpine' style={{height: 468, width: 1365, marginTop: 147.5, fontSize: 13}}>
+
             <AgGridReact
                 //ref={gridRef}
                 columnDefs={columnDefs}
-                rowData={resultado}
+                rowData={resultado} //o objeto ja vem filtrado para tabela de buscas
                 defaultColDef={defaultColDef}
                 animateRows={true}
                 rowSelection='multiple'
+                pagination={true}
+
             />
         </div>
 
