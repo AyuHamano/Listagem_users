@@ -7,10 +7,10 @@ Página Web em *React JS* que consome uma *API* e retorna uma tabela de buscas.
 
 # Configuração do Projeto:
 
-`` 
+``` 
 npm i axios react-router-dom
 
-``
+```
 
 
 
