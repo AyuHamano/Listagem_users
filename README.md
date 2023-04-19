@@ -1,9 +1,12 @@
-# Listagem de Usuários
+# Listagem de Usuários:
 
-Página Web em React JS que consome uma API em uma tabela de buscas. 
-Filtrar as buscas por nome completo, social e email
+Página Web em *React JS* que consome uma API e retorna uma tabela de buscas. 
+ - Filtra as buscas por nome completo, social e email
+ - Ordena os resultados em ordem alfabética
+ 
 
-*Consumo da API: método Axios*
+# Configuração do Projeto:
+
 
 
  
