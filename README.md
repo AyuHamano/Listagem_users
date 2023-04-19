@@ -6,7 +6,7 @@ Página Web em *React JS* que consome uma *API* e retorna uma tabela com dados d
  - Ordena os resultados da tabela
  
 
-# Para configuração do Projeto
+### Para configuração do Projeto
 
 - Instalação do React e do Vite:
 ``` 
