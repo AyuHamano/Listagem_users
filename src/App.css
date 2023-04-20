@@ -7,84 +7,66 @@
 
 }
 .container {
-  min-width: 1300px;
+  max-width: 980px;
+  width: 100%;
   margin: 0 auto;
 }
 
 body {
-  background-color:#F7F7F7;
-  min-height: 100vh;  
+  background-color:  #277920d7;
+  height: 100vh;  
 }
 
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 14vh;
+header {
   background-color: #F7F7F7;
-  color: #14470fbf;
-  box-shadow: 2px 2px 2px rgba(1, 22, 2, 0.25);
-  font-weight: bold;
-  border-bottom: solid #14470f18;
-
 }
-
-nav ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-}
-
-nav ul li {
-  padding: 0 15px;
-}
-
-nav h1 {
-  justify-content: center;
-  text-align: center;
-  font-size: 5vh;
-  width: 76.56vh;
-  height: 7.8125vh;
-  mix-blend-mode: normal;
-}
-
-#logo {
+header img {
   width: 25vh;
   height: 12vh;
   margin-left: 5vh;
 }
 
-#titulo {
-  
-  font-style: normal;
-  font-weight: 62.5vh;
-  
-  line-height: 7.8125vh;
-  justify-content: center;
-  text-align: center;
-  color: #F7F7F7;
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section.hero {
+  height: 20vh;
   
 }
 
-
-.busca {
-  height: 20vh;
-  background:  #3b8633d7;
+section.hero h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
+  line-height: 7.5vh;
+  color:  #F7F7F7;
+  margin:auto;
+  padding: 1vh;
+}
+
+section.hero .container {
+  max-width: 980px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
 }
 
 .busca-select {
   padding: 5vh;
 }
-.input {
-  padding: 5vh;
-  margin-right: 30vh;
-}
+
 .container div input {
   color:  #292b29bf;
-  padding: 0.2em;
+  padding: 1em;
   border: none;
   border-radius: 2.34375vh;
   font-size: 0.9rem;
@@ -102,52 +84,44 @@ nav h1 {
   font-size: 0.9rem;
   padding: 0.2em;
   outline: none;
+  margin: 1vh;
 }
 
-
+.input-busca {
+  margin-right: 30vh;
+}
 .container form input:focus {
   background-color: rgb(231, 238, 231);
 
 }
 
-
 #myGrid {
-  --ag-header-background-color: #154610d7;
+  --ag-header-background-color: #154610c5;
   --ag-header-foreground-color: #F7F7F7;
   --ag-odd-row-background-color: #205f1934;
   --ag-widget-horizontal-spacing: 50%;
 
 }
 
-@media (max-width: 1080px) {
- 
-  #titulo {
+@media (max-width: 730px) {
+  section.hero {
+    height: 30vh;
+  }
+  .hero .container {
+      flex-direction: column;
+      text-align: center;
+  }
+  section.hero h1 {
     color: red;
   }
-  .container form input {
-    left: 50vh;
-    right: 20vh;
+  .hero .container img {
+      order: -1;
   }
-  
-  #filtro {
-    right: 100vh;
+  .input-busca {
+    margin-right: 10vh;
+    margin-top: 1vh;
   }
-  .container {
-    display: block;
-  }
+
 }
 
-@media (max-width: 768px) {
-  #titulo {
-    width: 20vh;
-    font-size: 3vh;
-    color: black;
-    margin: 3vh 1vh 10vh 10vh;
-    color: rgb(76, 50, 190);
-  }
-  .container form input {
-    width: 100 vh;
-    height: 5 vh;
-    margin: 5vh 0vh 10vh -15vh;
-  }
-}
+

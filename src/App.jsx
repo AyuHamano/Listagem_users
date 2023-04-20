@@ -58,49 +58,51 @@ function App () {
   
 
   return (
-    <div className="container">
+    <div>
 
-      <nav className='navigation'>
-          
-          <div className ="nav-logo">
+      <header>
+          <div className ="container">
             <a href='https://www.labtime.ufg.br/site/#/'>
-              <img id='logo' src="img/marca_labtime.png" alt="logo"/>
+              <img src="img/marca_labtime.png" alt="logo"/>
             </a>
           </div>
-          <h1>Listas de Usuários</h1>
-          <ul>
-            <a href=""><li>Contato</li></a>
-            <a href=""><li>Sobre</li></a>
-            
-          </ul>
-        
-      </nav>
+      </header>
       
-      <div className="busca">
-      <div className="busca-select">
+
+      <section className='hero'>
+
+        <h1>Cadastros de Usuários</h1>
+        <div className="container">
+
           
-          <select name ='filtro' id="busca-filtro" onChange={(e) => setSearchType(e.target.value)}>
-            <option value= "Filtrar">Filtrar</option>
-            <option value="nomeCompleto">Nome Completo</option>
-            <option value="nomeSocial">Nome Social</option>
-            <option value="email">Email</option>
-          </select>
 
-      </div>     
+          <div className="busca">
 
-      <div className="input">
-        <input type="search" placeholder='Pesquisar' id='busca-campo' onChange={(e) =>   setSearchTitle(e.target.value)}/>
-      </div>
+            <select name ='filtro' id="busca-filtro" onChange={(e) => setSearchType(e.target.value)}>
+              <option value= "Filtrar">Filtrar</option>
+              <option value="nomeCompleto">Nome Completo</option>
+              <option value="nomeSocial">Nome Social</option>
+              <option value="email">Email</option>
 
-      
+            </select>
 
-      </div>
+          </div>     
+
+          <div className="input-busca">
+
+            <input type="search" placeholder='Pesquisar' onChange={(e) =>   setSearchTitle(e.target.value)}/>
+
+          </div>
+
+        </div>
+
+      </section>
           
           {console.log(searchType)} 
       
 
-
-     <div id="myGrid" className='ag-theme-alpine' style={{height: 500, width: 1365.5, fontSize: 13}}>
+    <div className="container">
+     <div id="myGrid" className='ag-theme-alpine' style={{height: 450, width: 1000, fontSize: 13}}>
 
             <AgGridReact
                 //ref={gridRef}
@@ -114,17 +116,7 @@ function App () {
                 rowGroupPanelShow={'always'}
                 pivotPanelShow={'always'}/>
         </div>
-
-        <div className="sobre">
-          <h1>Sobre o Projeto</h1>
-          <p>Email: ddd@labtimw.ufg.br</p>
         </div>
-
-        <div id="footer">
-          <p>Email: ddd@labtimw.ufg.br</p>
-          <p>telefone; 64 7888888</p>
-        </div>
-
     </div>    
   )
 }
