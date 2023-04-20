@@ -84,15 +84,14 @@ section.hero .container {
   font-size: 0.9rem;
   padding: 0.2em;
   outline: none;
-  margin: 1vh;
+  margin: 1vh 0vh 5vh 20vh;
 }
 
 .input-busca {
-  margin-right: 30vh;
+  margin: 1vh 40vh 5vh 10vh;
 }
 .container form input:focus {
   background-color: rgb(231, 238, 231);
-
 }
 
 #myGrid {
@@ -100,10 +99,26 @@ section.hero .container {
   --ag-header-foreground-color: #F7F7F7;
   --ag-odd-row-background-color: #205f1934;
   --ag-widget-horizontal-spacing: 50%;
+  --ag-borders: none;
+    max-width: 980px;
+    width: 100%;
+    margin: 0 4vh 0 4vh;
 
 }
 
-@media (max-width: 730px) {
+@media (max-width: 1150px) {
+  .input-busca {
+    margin: 1vh 50vh 5vh 10vh;
+  }
+  #busca-filtro {
+    margin-left: 30vh;
+  }
+  #myGrid {
+    max-width: 780px;
+  }
+}
+
+@media (max-width: 830px) {
   section.hero {
     height: 30vh;
   }
@@ -111,15 +126,24 @@ section.hero .container {
       flex-direction: column;
       text-align: center;
   }
-  section.hero h1 {
-    color: red;
-  }
   .hero .container img {
       order: -1;
   }
+
   .input-busca {
-    margin-right: 10vh;
-    margin-top: 1vh;
+    margin: 1vh 0 3vh 10vh;
+  }
+  #myGrid {
+    max-width: 550px;
+  }
+
+  @media (max-width: 630px) {
+    #myGrid {
+      max-width: 420px;
+    }
+    #busca-filtro {
+      margin-left: 10vh;
+    }
   }
 
 }

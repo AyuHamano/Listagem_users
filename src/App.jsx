@@ -13,10 +13,10 @@ function App () {
   const [columnDefs, setColumnDefs] = useState([
     {field: 'codigo', headerName: 'id', width: 66},
     {field: 'nomeCompleto', headerName: 'Nome Completo', width: 200, resizable: true},
-    {field: 'nomeSocial', width: 130},
-    {field: 'dataDeNascimento', headerName: 'Nascimento', width: 150},
-    {field: 'sexo', width: 82},
-    {field: 'numeroDeAcessos', headerName: 'Acessos', width: 100},
+    {field: 'nomeSocial', width: 140},
+    {field: 'dataDeNascimento', headerName: 'Nascimento', width: 140},
+    {field: 'sexo', width: 85},
+    {field: 'numeroDeAcessos', headerName: 'Acessos', width: 110},
     {field: 'estado', width: 130},
     {field: 'municipio', headerName: 'Cidade', width: 140},
     {field: 'dataDeVinculo', headerName: 'Vínculo', width: 120},
@@ -55,6 +55,8 @@ function App () {
   }), []);
 
   const tamanhoPagina = 8; //tamanho da página
+
+  const gridRef = useRef();
   
 
   return (
@@ -79,7 +81,7 @@ function App () {
           <div className="busca">
 
             <select name ='filtro' id="busca-filtro" onChange={(e) => setSearchType(e.target.value)}>
-              <option value= "Filtrar">Filtrar</option>
+              <option value= "">Filtros</option>
               <option value="nomeCompleto">Nome Completo</option>
               <option value="nomeSocial">Nome Social</option>
               <option value="email">Email</option>
@@ -90,7 +92,7 @@ function App () {
 
           <div className="input-busca">
 
-            <input type="search" placeholder='Pesquisar' onChange={(e) =>   setSearchTitle(e.target.value)}/>
+            <input type="search" placeholder='Selecione um filtro' onChange={(e) =>   setSearchTitle(e.target.value)}/>
 
           </div>
 
@@ -102,10 +104,11 @@ function App () {
       
 
     <div className="container">
-     <div id="myGrid" className='ag-theme-alpine' style={{height: 450, width: 1000, fontSize: 13}}>
+      <div id="myGrid" className='ag-theme-alpine' style={{height: 450, width: 1200, fontSize: 13}}>
 
             <AgGridReact
-                //ref={gridRef}
+                ref={gridRef}
+                onGridReady={params => (this.gridApi = params.api)}
                 columnDefs={columnDefs}
                 rowData={resultado} //o objeto ja vem filtrado para tabela de buscas
                 defaultColDef={defaultColDef}
@@ -114,10 +117,12 @@ function App () {
                 pagination={true} 
                 paginationPageSize={tamanhoPagina}
                 rowGroupPanelShow={'always'}
-                pivotPanelShow={'always'}/>
+                pivotPanelShow={'always'}
+                />
+
         </div>
         </div>
-    </div>    
+      </div>
   )
 }
 export default App
