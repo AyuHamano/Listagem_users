@@ -5,10 +5,10 @@ import { AgGridReact } from 'ag-grid-react'
 import 'ag-grid-community/styles/ag-grid.css'
 import 'ag-grid-community/styles/ag-theme-alpine.css'
 
+
 function App () { 
-  const [loading, setLoading] = useState(false); 
-  const [usuarios, setUsuarios] = useState([]); //const que recebe valores da api
-  const [searchTitle, setSearchTitle] = useState(""); //recebe os valores digitados
+  const [usuers, setUsers] = useState([]); //const que recebevalores  da api
+  const [searchTitle, setSearchTitle] = useState(""); //recebe osvalores   digitados
   const [searchType, setSearchType] = useState(""); //recebe o valor selecionado na no select
   const [columnDefs, setColumnDefs] = useState([
     {field: 'codigo', headerName: 'id', width: 66},
@@ -26,19 +26,15 @@ function App () {
 
 
   //realiza conexão com a api e set os seus valores em "usuarios"
-  useEffect(() => {
-    const loadUsers = async () => {
-      setLoading(true);
+  useEffect(() => { async () => {
       const response = await axios.get("https://dev.labtime.ufg.br/selecao-2023/usuarios");
-      setUsuarios(response.data);
-      setLoading(false);
+      setUsers(response.data);
     };
-    loadUsers()
     }, []);
 
   
   
-  const resultado = (usuarios.filter((value) => {
+  const result = (usuers.filter((value) => {
           if (searchTitle === "" || searchType === "") {
             return value;
           }
@@ -108,9 +104,8 @@ function App () {
 
             <AgGridReact
                 ref={gridRef}
-                onGridReady={params => (this.gridApi = params.api)}
                 columnDefs={columnDefs}
-                rowData={resultado} //o objeto ja vem filtrado para tabela de buscas
+                rowData={result} //o objeto ja vem filtrado para tabela de buscas
                 defaultColDef={defaultColDef}
                 animateRows={true}
                 rowSelection='multiple'

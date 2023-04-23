@@ -132,20 +132,40 @@ section.hero .container {
 
   .input-busca {
     margin: 1vh 0 3vh 10vh;
+  
+  }
+  .container div input {
+    width: 50vh;
   }
   #myGrid {
-    max-width: 550px;
+    max-width: 530px;
+    margin-left: 15vh;
   }
 
   @media (max-width: 630px) {
     #myGrid {
-      max-width: 420px;
+      max-width: 410px;
     }
     #busca-filtro {
       margin-left: 10vh;
     }
   }
 
+  @media (max-width: 530px) {
+    #myGrid {
+      max-width: 310px;
+    }
+    #busca-filtro {
+      margin-left: 10vh;
+    }
+  }
+  @media (max-width: 380px) {
+    #myGrid {
+      max-width: 250px;
+    }
+    .container div input {
+        width: 40vh;
+    }
+  }
+
 }
-
-
