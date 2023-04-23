@@ -14,7 +14,7 @@ create vite@latest
 cd Listagem_users
 ```
  
-- Instalação do *axios*:
+- Instalação do axios:
 ```
 npm i axios react-router-dom
 ```
