@@ -27,6 +27,8 @@ npm run dev
 
 - instalação do Ag Grid:
 ``` 
+npm install --save ag-grid-community
+npm install --save ag-grid-react
 ```
 
 
