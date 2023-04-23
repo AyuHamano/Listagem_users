@@ -8,13 +8,18 @@ Página Web em *React JS* que consome uma **API** e retorna uma tabela com dados
 
 ### Para configuração do Projeto
 
-- Instalação do React e do Vite:
-``` 
+- Instalação do Vite e React:
+```create vite@latest
+   cd Listagem_users
 ```
  
 - Instalação do axios:
+```npm i axios react-router-dom```
+
+Instalação do React:
+```npm install
+npm run dev
 ``` 
-```
 
 - instalação do Ag Grid:
 ``` 
