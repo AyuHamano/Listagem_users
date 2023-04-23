@@ -14,7 +14,9 @@ Página Web em *React JS* que consome uma **API** e retorna uma tabela com dados
 ```
  
 - Instalação do axios:
-```npm i axios react-router-dom```
+```
+npm i axios react-router-dom
+```
 
 Instalação do React:
 ```npm install
