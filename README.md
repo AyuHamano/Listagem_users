@@ -22,6 +22,10 @@ npm i axios react-router-dom
 Instalação do React:
 ```
 npm install
+```
+
+Executar o Programa:
+```
 npm run dev
 ``` 
 
