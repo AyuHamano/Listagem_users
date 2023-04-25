@@ -16,7 +16,7 @@ function App () {
     {field: 'nomeCompleto', headerName: 'Nome Completo', width: 200, resizable: true},
     {field: 'nomeSocial', width: 140},
     {field: 'dataDeNascimento', headerName: 'Nascimento', width: 140},
-    {field: 'sexo', width: 84},
+    {field: 'sexo', width: 83.5},
     {field: 'numeroDeAcessos', headerName: 'Acesso', width: 105},
     {field: 'estado', width: 130},
     {field: 'municipio', headerName: 'Cidade', width: 140},
@@ -64,9 +64,9 @@ function App () {
 
       <header>
           <div className ="container">
-            <a href='https://www.labtime.ufg.br/site/#/'>
-              <img src="img/marca_labtime.png" alt="logo"/>
-            </a>
+            <h1>
+              LabTime - Front End
+            </h1>
           </div>
       </header>
       
@@ -104,7 +104,7 @@ function App () {
       
 
     <div className="container-2">
-      <div id="myGrid" className='ag-theme-alpine' style={{height: 450, width: 1340, fontSize: 13}}>
+      <div id="myGrid" className='ag-theme-alpine' style={{height: 450, width: 1330, fontSize: 13}}>
 
             <AgGridReact
                 ref={gridRef}
