@@ -1,20 +1,22 @@
 # Listagem de Usuários:
 
-Página Web em **React JS** que consome uma **API** e retorna uma tabela com dados de usuários. 
- - Possui campo para buscas
+Página Web em **React JS** que consome uma **API** e retorna uma tabela em Ag Grid com dados de usuários. 
+
+Funcionalidades:
+ - Possui campo para digitar as buscas
  - Filtra as buscas por nome completo, nome social e email
  - Ordena os resultados da tabela
  
 
 ### Para configuração do Projeto
 
-- Criação do Vite:
+Criação do Vite:
 ```
 create vite@latest
 cd Listagem_users
 ```
  
-- Instalação do axios:
+Instalação do axios:
 ```
 npm i axios react-router-dom
 ```
@@ -29,7 +31,7 @@ Executar o Programa:
 npm run dev
 ``` 
 
-- instalação do Ag Grid:
+instalação do Ag Grid:
 ``` 
 npm install --save ag-grid-community
 npm install --save ag-grid-react
