@@ -25,9 +25,9 @@ header {
   background-color: #F7F7F7;
 }
 header h1 {
-  width: 25vh;
+  width: 80vh;
   height: 12vh;
-  margin-left: 5vh;
+  margin-top: 2vh;
   color:  #175012d7;
 }
 
@@ -113,9 +113,6 @@ section.hero .container {
   #myGrid {
     max-width: 1090px;
     margin-left: 5vh;
-  }
-  header h1 {
-    color: blue;
   }
 }
 
