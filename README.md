@@ -1,5 +1,7 @@
 # Listagem de Usuários:
 
+*Projeto orientado pela equipe de desenvolvimento do LabTime-UFG, que disponibilizou a API*
+
 Página Web em **React JS** que consome uma **API** e retorna uma tabela com dados de usuários. 
 
 Funcionalidades:
