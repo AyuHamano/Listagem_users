@@ -16,8 +16,8 @@ function App () {
     {field: 'nomeCompleto', headerName: 'Nome Completo', width: 200, resizable: true},
     {field: 'nomeSocial', width: 140},
     {field: 'dataDeNascimento', headerName: 'Nascimento', width: 140},
-    {field: 'sexo', width: 85},
-    {field: 'numeroDeAcessos', headerName: 'Acessos', width: 110},
+    {field: 'sexo', width: 84},
+    {field: 'numeroDeAcessos', headerName: 'Acesso', width: 105},
     {field: 'estado', width: 130},
     {field: 'municipio', headerName: 'Cidade', width: 140},
     {field: 'dataDeVinculo', headerName: 'Vínculo', width: 120},
@@ -103,8 +103,8 @@ function App () {
           {console.log(searchType)} 
       
 
-    <div className="container">
-      <div id="myGrid" className='ag-theme-alpine' style={{height: 450, width: 1200, fontSize: 13}}>
+    <div className="container-2">
+      <div id="myGrid" className='ag-theme-alpine' style={{height: 450, width: 1340, fontSize: 13}}>
 
             <AgGridReact
                 ref={gridRef}

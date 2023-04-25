@@ -11,7 +11,11 @@
   width: 100%;
   margin: 0 auto;
 }
-
+.container-2 {
+  max-width: 1340px;
+  width: 100%;
+  margin: 0 auto;
+}
 body {
   background-color:  #277920d7;
   height: 100vh;  
@@ -100,9 +104,7 @@ section.hero .container {
   --ag-odd-row-background-color: #205f1934;
   --ag-widget-horizontal-spacing: 50%;
   --ag-borders: none;
-    max-width: 980px;
     width: 100%;
-    margin: 0 4vh 0 4vh;
 
 }
 
@@ -115,6 +117,7 @@ section.hero .container {
   }
   #myGrid {
     max-width: 780px;
+    margin-left: 20vh;
   }
 }
 
@@ -141,31 +144,34 @@ section.hero .container {
     max-width: 530px;
     margin-left: 15vh;
   }
-
-  @media (max-width: 630px) {
-    #myGrid {
-      max-width: 410px;
-    }
-    #busca-filtro {
-      margin-left: 10vh;
-    }
+  #busca-filtro {
+    margin-right: 20vh;
   }
+}
 
-  @media (max-width: 530px) {
-    #myGrid {
-      max-width: 310px;
-    }
-    #busca-filtro {
-      margin-left: 10vh;
-    }
+@media (max-width: 630px) {
+  #myGrid {
+    max-width: 410px;
   }
-  @media (max-width: 380px) {
-    #myGrid {
-      max-width: 250px;
-    }
-    .container div input {
-        width: 40vh;
-    }
+  #busca-filtro {
+    margin-left: 25vh;
   }
+}
+@media (max-width: 530px) {
+  #myGrid {
+    max-width: 310px;
+  }
+  #busca-filtro {
+    margin-left: 25vh;
+  }
+}
 
+
+@media (max-width: 380px) {
+  #myGrid {
+    max-width: 250px;
+  }
+  .container div input {
+      width: 40vh;
+  }
 }
