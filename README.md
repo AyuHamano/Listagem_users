@@ -12,11 +12,6 @@ Funcionalidades:
 
 ### Para configuração do Projeto
 
-Instalação do axios para conexão com a API:
-```
-npm i axios react-router-dom
-```
-
 Instalação do React:
 ```
 npm install
