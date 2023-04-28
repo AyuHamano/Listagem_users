@@ -12,17 +12,6 @@ Funcionalidades:
 
 ### Para configuração do Projeto
 
-Criação do Vite:
-```
-create vite@latest
-cd Listagem_users
-```
- 
-Instalação do axios para conexão com a API:
-```
-npm i axios react-router-dom
-```
-
 Instalação do React:
 ```
 npm install
@@ -32,12 +21,6 @@ Executar o Programa:
 ```
 npm run dev
 ``` 
-
-instalação do Ag Grid para criação da tabela:
-``` 
-npm install --save ag-grid-community
-npm install --save ag-grid-react
-```
 
 
  
