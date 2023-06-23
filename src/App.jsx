@@ -10,7 +10,7 @@ function App () {
   const [loading, setLoading] = useState(false); 
   const [users, setUsers] = useState([]); //objeto que recebe valores  da api
   const [searchTitle, setSearchTitle] = useState(""); //recebe osvalores   digitados
-  const [searchType, setSearchType] = useState(""); //recebe o valor selecionado na no select
+  const [searchType, setSearchType] = useState("filtro"); //recebe o valor selecionado na no select
   const [columnDefs, setColumnDefs] = useState([
     {field: 'codigo', headerName: 'id', width: 66},
     {field: 'nomeCompleto', headerName: 'Nome Completo', width: 200, resizable: true},
@@ -38,16 +38,16 @@ function App () {
     }, []);
 
   
-  
-  const result = (users.filter((value) => {
-          if (searchTitle === "" || searchType === "") {
+
+  const result = (searchType === 'filtro' && !!searchTitle) ? (users.filter((item) => Object.values(item).some(value => value.toString().toLowerCase().includes(searchTitle.toLowerCase())))) : (users.filter((value) => {
+        
+          if ( searchTitle === "") {
             return value;
           }
           else if (value[searchType].toLowerCase().includes(searchTitle.toLowerCase())) {
             return value;
           }
   }))
-
   //teste ag grid
   const defaultColDef = useMemo(() => ({
     sortable: true, //ordenar
@@ -81,7 +81,7 @@ function App () {
           <div className="busca">
 
             <select name ='filtro' id="busca-filtro" onChange={(e) => setSearchType(e.target.value)}>
-              <option value= "">Filtros</option>
+              <option value= "filtro">Filtros</option>
               <option value="nomeCompleto">Nome Completo</option>
               <option value="nomeSocial">Nome Social</option>
               <option value="email">Email</option>
@@ -92,15 +92,13 @@ function App () {
 
           <div className="input-busca">
 
-            <input type="search" placeholder='Selecione um filtro' onChange={(e) =>   setSearchTitle(e.target.value)}/>
+            <input type="search" placeholder='Selecione um filtro' onChange={(e) => setSearchTitle(e.target.value)}/>
 
           </div>
 
         </div>
 
       </section>
-          
-          {console.log(searchType)} 
       
 
     <div className="container-2">
