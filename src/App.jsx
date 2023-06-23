@@ -54,7 +54,7 @@ function App () {
     filter: true 
   }), []);
 
-  const tamanhoPagina = 8; //tamanho da página
+  const pageSize = 8; //tamanho da página
 
   const gridRef = useRef();
   
@@ -112,7 +112,7 @@ function App () {
                 animateRows={true}
                 rowSelection='multiple'
                 pagination={true} 
-                paginationPageSize={tamanhoPagina}
+                paginationPageSize={pageSize}
                 rowGroupPanelShow={'always'}
                 pivotPanelShow={'always'}
                 />
